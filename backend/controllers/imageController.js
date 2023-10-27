@@ -4,13 +4,14 @@ import {
   getArticlesData,
   getFiles,
   populateArticlesWithImages,
-} from "../utils/index.js";
+} from "../utils/functions.js";
+import { sendSuccessResponse } from "../utils/createResponse.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const uploadDestination = path.join(path.dirname(__filename), "../images");
 const dataDestination = path.join(path.dirname(__filename), "../data");
 
-export const getDatawithImagePaths = async (req, res) => {
+export const getDatawithImagePaths = async (req, res, next) => {
   try {
     const imageFiles = await getFiles(uploadDestination);
     const articlesData = await getArticlesData(
@@ -18,20 +19,32 @@ export const getDatawithImagePaths = async (req, res) => {
     );
 
     const responseData = populateArticlesWithImages(articlesData, imageFiles);
-    res.status(200).json(responseData);
+
+    sendSuccessResponse(
+      res,
+      "Articles Fetched successfully.",
+      200,
+      responseData
+    );
   } catch (error) {
-    res.status(500).send(error.message || "Error fetching image names.");
+    let err = error;
+    console.error(error);
+    next(err);
   }
 };
 
-export const uploadImage = async (req, res) => {
+export const uploadImage = async (req, res, next) => {
   try {
     if (!req.file) {
-      return res.status(400).send("No file uploaded.");
+      const error = new Error("No file uploaded.");
+      error.status = 400;
+      throw error;
     }
 
-    res.status(200).send("File uploaded successfully.");
+    sendSuccessResponse(res, "File uploaded successfully.", 201);
   } catch (error) {
-    res.status(500).send("File upload failed.");
+    let err = error;
+    console.error("======", error);
+    next(err);
   }
 };

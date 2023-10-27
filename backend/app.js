@@ -2,7 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import cors from "cors";
-import imagesRouter from "./routes/imagesRouter.js";
+import imagesRouter from "./routes/images/imagesRouter.js";
+import { errorHandler } from "./utils/errorResponse.js";
 
 dotenv.config();
 
@@ -29,9 +30,7 @@ app.use(express.json());
 
 app.use("/api", imagesRouter);
 
-app.use((error, req, res) => {
-  res.status(error.statusCode).json({ success: false, error: error.message });
-});
+app.use(errorHandler);
 
 app.use((req, res) => {
   res.status(404).json({ success: false, msg: "404, Page Not Found." });

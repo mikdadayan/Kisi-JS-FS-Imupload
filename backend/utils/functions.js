@@ -9,10 +9,15 @@ export const getFiles = async (uploadDestinations) => {
   return await fs.readdir(uploadDestinations);
 };
 
-export const populateArticlesWithImages = (data, uploads) => {
+export const populateArticlesWithImages = (data = [], uploads = []) => {
   let responseData = [];
   for (let i = 0; i < uploads.length; i++) {
-    responseData[i] = { ...data[i] };
+    if (!data[i]) {
+      responseData[i] = { ...data[0] };
+    } else {
+      responseData[i] = { ...data[i] };
+    }
+
     // imageUrl Path to be updated...
     responseData[i].imageUrl = `/${uploads[i]}`;
   }
