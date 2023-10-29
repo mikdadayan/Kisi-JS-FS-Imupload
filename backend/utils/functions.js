@@ -17,8 +17,6 @@ export const populateArticlesWithImages = (data = [], uploads = []) => {
     } else {
       responseData[i] = { ...data[i] };
     }
-
-    // imageUrl Path to be updated...
     responseData[i].imageUrl = `/${uploads[i]}`;
   }
   return responseData;

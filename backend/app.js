@@ -24,7 +24,7 @@ const options = {
   methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
 };
 
-app.use(cors(options));
+app.use(cors());
 
 app.use(express.json());
 

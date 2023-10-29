@@ -1,5 +1,6 @@
 import path from "path";
 import { fileURLToPath } from "url";
+
 import {
   getArticlesData,
   getFiles,
@@ -13,14 +14,13 @@ const dataDestination = path.join(path.dirname(__filename), "../data");
 
 export const getDatawithImagePaths = async (req, res, next) => {
   try {
-    const imageFiles = await getFiles(uploadDestination);
     const articlesData = await getArticlesData(
       `${dataDestination}/articles.json`
     );
-
+    const imageFiles = await getFiles(uploadDestination);
     const responseData = populateArticlesWithImages(articlesData, imageFiles);
 
-    sendSuccessResponse(
+    return sendSuccessResponse(
       res,
       "Articles Fetched successfully.",
       200,
@@ -41,10 +41,18 @@ export const uploadImage = async (req, res, next) => {
       throw error;
     }
 
-    sendSuccessResponse(res, "File uploaded successfully.", 201);
+    const articlesData = await getArticlesData(
+      `${dataDestination}/articles.json`
+    );
+    const imageFiles = await getFiles(uploadDestination);
+    const responseData = populateArticlesWithImages(articlesData, imageFiles);
+
+    return sendSuccessResponse(res, "File uploaded successfully.", 201, {
+      ...responseData[responseData.length - 1],
+    });
   } catch (error) {
     let err = error;
-    console.error("======", error);
+    console.error(error);
     next(err);
   }
 };
