@@ -1,5 +1,15 @@
+import "./App.scss";
+import MosaicLayout from "./components/MosaicLayout";
+
+console.log(process.env);
+
 const App = () => {
-  return <h1>Kisi Frontend</h1>;
+  console.log("=====>", process.env.KISI_BACKEND_API);
+  return (
+    <div className="app">
+      <MosaicLayout />
+    </div>
+  );
 };
 
 export default App;
