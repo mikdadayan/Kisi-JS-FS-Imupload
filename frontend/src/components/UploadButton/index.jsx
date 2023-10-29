@@ -1,9 +1,7 @@
 import React, { useState, useCallback } from "react";
-import Input from "./Input";
+import Input from "../Input";
 
-import "./UploadButton.scss";
-
-const KISI_BACKEND_API = "http://localhost:8000";
+import "./style.scss";
 
 const UploadButton = ({ data, onDataUpload }) => {
   const [selectedFile, setSelectedFile] = useState("");
@@ -14,16 +12,20 @@ const UploadButton = ({ data, onDataUpload }) => {
       formData.append("file", file);
 
       try {
-        const response = await fetch(`${KISI_BACKEND_API}/api/images`, {
-          method: "POST",
-          body: formData,
-        });
+        const response = await fetch(
+          `${process.env.REACT_APP_KISI_BACKEND_API}/api/images`,
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
 
         if (response.ok) {
           const responseData = await response.json();
           onDataUpload([...data, responseData.data]);
         } else {
           console.error("Upload failed:", response.status, response.statusText);
+          alert("Upload failed");
         }
       } catch (error) {
         console.error("Error during upload:", error);

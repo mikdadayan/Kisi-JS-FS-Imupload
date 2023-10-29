@@ -1,13 +1,11 @@
-import "./Card.scss";
-
-const KISI_BACKEND_API = "http://localhost:8000";
+import "./style.scss";
 
 function Card({ imageUrl, title, description }) {
   return (
     <div className="card">
       <img
         crossOrigin="anonymous"
-        src={`${KISI_BACKEND_API}/api/images${imageUrl}`}
+        src={`${process.env.REACT_APP_KISI_BACKEND_API}/api/images${imageUrl}`}
         alt={title}
       />
       <div className="card-title">{title}</div>

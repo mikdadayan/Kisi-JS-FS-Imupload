@@ -8,7 +8,7 @@ const Input = ({
   accept = "",
   labelText = "",
   labelClassName = "",
-  style = "",
+  style = {},
 }) => {
   return (
     <>
