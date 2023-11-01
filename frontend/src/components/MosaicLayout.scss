@@ -1,9 +1,10 @@
 .mosaic-layout {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  // justify-content: center;
+  align-items: flex-start;
+  width: 1300px;
+  flex-wrap: row;
 }
 
 .title {

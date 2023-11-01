@@ -1,5 +1,3 @@
-import React from "react";
-
 import Card from "./Card/index";
 import UploadButton from "./UploadButton";
 import { useFetchData } from "../hooks/useFetchData";

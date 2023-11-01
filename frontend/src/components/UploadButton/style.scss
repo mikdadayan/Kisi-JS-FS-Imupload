@@ -16,10 +16,12 @@
     color: var(--kisi-brand-pure-white, #fff);
     text-align: center;
     font-family: Neue Haas Unica;
-    font-size: 20px;
+    // font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 32px;
     letter-spacing: -0.4px;
+
+    font-size: calc(0.7vw + 0.7vh + 0.7vmin);
   }
 }

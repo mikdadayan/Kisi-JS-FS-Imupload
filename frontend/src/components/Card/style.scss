@@ -5,11 +5,13 @@
   display: flex;
   flex-direction: column;
   height: max-content;
-  align-self: flex-start;
+  // align-self: flex-start;
+  // align-self: center;
 
   img {
     max-width: 100%;
-    object-fit: cover;
+    max-height: 100%;
+    object-fit: contain;
     flex-shrink: 0;
   }
 
