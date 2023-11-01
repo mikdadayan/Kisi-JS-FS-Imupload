@@ -2,8 +2,10 @@ import express from "express";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import cors from "cors";
+
 import imagesRouter from "./routes/images/articleAndImageController.js";
 import { errorHandler } from "./utils/errorResponse.js";
+import { listAvailableRoutes } from "./controllers/listAvailableRoutes.js";
 
 dotenv.config();
 
@@ -29,6 +31,8 @@ app.use(cors(options));
 app.use(express.json());
 
 app.use("/api", imagesRouter);
+
+app.use("/", listAvailableRoutes);
 
 app.use(errorHandler);
 
