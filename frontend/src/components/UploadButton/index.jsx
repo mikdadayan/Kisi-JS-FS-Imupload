@@ -3,7 +3,7 @@ import Input from "../Input";
 
 import "./style.scss";
 
-const UploadButton = ({ data, onDataUpload }) => {
+const UploadButton = ({ data, onDataUpload, setErrors }) => {
   const [selectedFile, setSelectedFile] = useState("");
 
   const handleFileUpload = useCallback(
@@ -25,13 +25,13 @@ const UploadButton = ({ data, onDataUpload }) => {
           onDataUpload([...data, responseData.data]);
         } else {
           console.error("Upload failed:", response.status, response.statusText);
-          alert("Upload failed");
+          setErrors((prevErr) => [...prevErr, "Upload failed"]);
         }
       } catch (error) {
         console.error("Error during upload:", error);
       }
     },
-    [data, onDataUpload]
+    [data, onDataUpload, setErrors]
   );
 
   let handleFileChange = useCallback(

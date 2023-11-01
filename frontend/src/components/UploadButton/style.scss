@@ -1,9 +1,8 @@
 .file-upload-container {
   display: inline-flex;
   height: 34px;
-  padding: 8px 20px 5px 20px;
+  padding: 3px 10px 2px 10px;
   align-items: center;
-  gap: 10px;
   flex-shrink: 0;
   border-radius: 25px;
   background: var(--kisi-brand-connect-blue-50, #4a52ff);
@@ -16,12 +15,19 @@
     color: var(--kisi-brand-pure-white, #fff);
     text-align: center;
     font-family: Neue Haas Unica;
-    // font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 32px;
     letter-spacing: -0.4px;
-
+    width: 100%;
     font-size: calc(0.7vw + 0.7vh + 0.7vmin);
+  }
+
+  @media (min-width: 768px) {
+    padding: 8px 20px 5px 20px;
+  }
+
+  @media (min-width: 576px) {
+    padding: 5px 16px 3px 16px;
   }
 }

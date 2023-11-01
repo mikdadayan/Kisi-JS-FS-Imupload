@@ -1,41 +1,82 @@
+$primary-color: #222647;
+$font-size-small: 0.5rem;
+$font-size-medium: 0.7rem;
+$font-size-large: 0.9rem;
+$font-size-xlarge: 1.2rem;
+
 .card {
   position: relative;
   overflow: hidden;
-  margin: 10px;
   display: flex;
   flex-direction: column;
-  height: max-content;
-  // align-self: flex-start;
-  // align-self: center;
+  background: $primary-color;
 
   img {
     max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
     flex-shrink: 0;
+    transition: opacity 0.5s;
   }
 
-  .card-title {
+  .card_content {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 5px;
-    border-radius: 3px;
-    z-index: 1;
+    top: 0;
+    left: 0;
+
+    .card-title {
+      color: #fff;
+      padding: 10px;
+      border-radius: 3px;
+      z-index: 1;
+      font-size: $font-size-small;
+
+      @media (min-width: 768px) {
+        font-size: $font-size-medium;
+      }
+
+      @media (min-width: 992px) {
+        font-size: $font-size-large;
+      }
+
+      @media (min-width: 1200px) {
+        font-size: $font-size-xlarge;
+      }
+    }
+
+    .card-description {
+      display: none;
+      padding: 10px;
+      color: #fff;
+      flex: 1;
+      font-size: $font-size-small;
+
+      @media (min-width: 768px) {
+        font-size: $font-size-small;
+      }
+
+      @media (min-width: 992px) {
+        font-size: $font-size-medium;
+      }
+
+      @media (min-width: 1200px) {
+        font-size: $font-size-large;
+      }
+    }
   }
 
-  .card-description {
+  .chervon-right {
     position: absolute;
-    display: none;
-    padding: 10px;
-    background-color: #fff;
-    flex: 1;
-    font-size: 1rem;
-    color: #666;
+    bottom: 0;
+    right: 0;
   }
 
-  &:hover .card-description {
-    display: block;
+  &:hover {
+    .card-description {
+      display: block;
+    }
+    img {
+      opacity: 0;
+    }
   }
 }
