@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import cors from "cors";
-import imagesRouter from "./routes/images/imagesRouter.js";
+import imagesRouter from "./routes/images/articleAndImageController.js";
 import { errorHandler } from "./utils/errorResponse.js";
 
 dotenv.config();

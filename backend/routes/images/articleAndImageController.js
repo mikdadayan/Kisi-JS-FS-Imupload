@@ -2,11 +2,15 @@ import express, { Router } from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 
-import {
-  getDatawithImagePaths,
-  uploadImage,
-} from "../../controllers/imageController.js";
 import { upload } from "../../middlewares/uploadImage.js";
+import {
+  fetchArticlesWithImages,
+  handleImageUpload,
+} from "../../controllers/articleAndImageController.js";
+import {
+  fetchArticlesWithImagesLimiter,
+  handleImageUploadLimiter,
+} from "../../utils/rateLimiter.js";
 
 const router = Router();
 
@@ -17,8 +21,13 @@ console.log(uploadDestination);
 
 router.use("/images", express.static(uploadDestination));
 
-router.get("/images", getDatawithImagePaths);
+router.get("/images", fetchArticlesWithImagesLimiter, fetchArticlesWithImages);
 
-router.post("/images", upload.single("file"), uploadImage);
+router.post(
+  "/images",
+  handleImageUploadLimiter,
+  upload.single("file"),
+  handleImageUpload
+);
 
 export default router;

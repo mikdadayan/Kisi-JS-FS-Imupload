@@ -12,7 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const uploadDestination = path.join(path.dirname(__filename), "../images");
 const dataDestination = path.join(path.dirname(__filename), "../data");
 
-export const getDatawithImagePaths = async (req, res, next) => {
+export const fetchArticlesWithImages = async (req, res, next) => {
   try {
     const articlesData = await getArticlesData(
       `${dataDestination}/articles.json`
@@ -33,7 +33,7 @@ export const getDatawithImagePaths = async (req, res, next) => {
   }
 };
 
-export const uploadImage = async (req, res, next) => {
+export const handleImageUpload = async (req, res, next) => {
   try {
     if (!req.file) {
       const error = new Error("No file uploaded.");
