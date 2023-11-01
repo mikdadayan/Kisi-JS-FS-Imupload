@@ -17,8 +17,6 @@ const router = Router();
 const __filename = fileURLToPath(import.meta.url);
 const uploadDestination = path.join(path.dirname(__filename), "../../images");
 
-console.log(uploadDestination);
-
 router.use("/images", express.static(uploadDestination));
 
 router.get("/images", fetchArticlesWithImagesLimiter, fetchArticlesWithImages);
