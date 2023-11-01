@@ -81,8 +81,8 @@
 - `express-rate-limit`: Basic rate-limiting middleware for Express.
 - `express`: Express middleware for validating requests.
 - `helmet`: Secure Express apps by setting various HTTP headers.
-- `multer`: Promise-based Node.js ORM for SQL databases.
-- `dotenv`: SQLite client for Node.js.
+- `multer`: Middleware for handling multi-part/form-data, primarily used for file uploads in Node.js.
+- `dotenv`: Loads environment variables from a `.env` file into `process.env`, typically used for configuration settings in Node.js applications, not related to SQLite.
 
 ## Development Dependencies
 
