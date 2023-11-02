@@ -55,7 +55,7 @@ const UploadButton = ({ data, onDataUpload, setErrors }) => {
         id="image_uploads"
         className="file-upload-button"
         accept="image/*"
-        labelText="Button"
+        labelText="Upload"
         labelClassName="file-upload-label"
       />
     </div>
