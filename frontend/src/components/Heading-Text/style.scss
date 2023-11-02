@@ -7,25 +7,28 @@
     font-style: normal;
     font-weight: 400;
     line-height: 44px;
-    letter-spacing: -1.28px;
-    margin: 0%;
+    letter-spacing: 0px;
     margin-top: 60px;
-    font-size: 0.8rem;
+    font-size: 0.4rem;
 
     @media (min-width: 578px) {
       font-size: 0.9rem;
+      letter-spacing: -1.28px;
     }
 
     @media (min-width: 768px) {
       font-size: 1.2rem;
+      letter-spacing: -1.28px;
     }
 
     @media (min-width: 992px) {
       font-size: 1.5rem;
+      letter-spacing: -1.28px;
     }
 
     @media (min-width: 1280px) {
       font-size: 2rem;
+      letter-spacing: -1.28px;
     }
   }
 }
