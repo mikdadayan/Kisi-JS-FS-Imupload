@@ -18,7 +18,7 @@ const Home = () => {
     <div className="home">
       {error && <ErrorMessage message={error && error.message} />}
       {errors &&
-        errors.length &&
+        errors.length > 0 &&
         errors.map((error, id) => <ErrorMessage key={id} message={error} />)}
       {loading && !imageData.length && <Loading />}
       <MosaicLayout

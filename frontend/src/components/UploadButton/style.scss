@@ -1,45 +1,48 @@
-.file-upload-container {
-  display: block;
-  height: 34px;
-  padding: 3px 10px 2px 10px;
+.file-upload {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  flex-shrink: 0;
-  border-radius: 25px;
-  background: var(--kisi-brand-connect-blue-50, #4a52ff);
+  margin-top: 20px;
 
-  .file-upload-button {
-    display: none;
-  }
+  .file-upload-container {
+    margin: auto;
+    height: 34px;
+    padding: 3px 10px 2px 10px;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 25px;
+    background: var(--kisi-brand-connect-blue-50, #4a52ff);
 
-  .file-upload-label {
-    color: var(--kisi-brand-pure-white, #fff);
-    text-align: center;
-    font-family: Neue Haas Unica;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 32px;
-    letter-spacing: -0.4px;
-    width: 100%;
-    font-size: calc(0.3vw + 0.3vh + 0.3vmin);
+    .file-upload-button {
+      display: none;
+    }
+
+    .file-upload-label {
+      color: var(--kisi-brand-pure-white, #fff);
+      text-align: center;
+      font-family: Neue Haas Unica;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 32px;
+      letter-spacing: -0.4px;
+      width: 100%;
+      font-size: calc(0.3vw + 0.3vh + 0.3vmin);
+
+      @media (min-width: 576px) {
+        font-size: calc(0.4vw + 0.4vh + 0.4vmin);
+      }
+
+      @media (min-width: 768px) {
+        font-size: calc(0.5vw + 0.5vh + 0.5vmin);
+      }
+    }
 
     @media (min-width: 576px) {
-      font-size: calc(0.4vw + 0.4vh + 0.4vmin);
-
-      // padding: 5px 16px 3px 16px;
+      padding: 5px 16px 3px 16px;
     }
 
     @media (min-width: 768px) {
-      font-size: calc(0.5vw + 0.5vh + 0.5vmin);
-
-      // padding: 8px 20px 5px 20px;
+      padding: 8px 20px 5px 20px;
     }
-  }
-
-  @media (min-width: 576px) {
-    padding: 5px 16px 3px 16px;
-  }
-
-  @media (min-width: 768px) {
-    padding: 8px 20px 5px 20px;
   }
 }

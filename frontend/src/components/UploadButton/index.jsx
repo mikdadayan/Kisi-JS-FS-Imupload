@@ -47,17 +47,19 @@ const UploadButton = ({ data, onDataUpload, setErrors }) => {
   );
 
   return (
-    <div className="file-upload-container">
-      <Input
-        type="file"
-        onChange={handleFileChange}
-        value={selectedFile}
-        id="image_uploads"
-        className="file-upload-button"
-        accept="image/*"
-        labelText="Upload"
-        labelClassName="file-upload-label"
-      />
+    <div className="file-upload">
+      <div className="file-upload-container">
+        <Input
+          type="file"
+          onChange={handleFileChange}
+          value={selectedFile}
+          id="image_uploads"
+          className="file-upload-button"
+          accept="image/*"
+          labelText="Upload"
+          labelClassName="file-upload-label"
+        />
+      </div>
     </div>
   );
 };

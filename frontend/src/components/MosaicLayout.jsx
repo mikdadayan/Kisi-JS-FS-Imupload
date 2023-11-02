@@ -21,14 +21,14 @@ function MosaicLayout({
             imageData &&
             imageData.length &&
             imageData.map((item, id) => <Card key={id} {...item} />)}
-          <UploadButton
-            errors={errors}
-            setErrors={setErrors}
-            data={imageData}
-            onDataUpload={setImageData}
-          />
         </div>
       )}
+      <UploadButton
+        errors={errors}
+        setErrors={setErrors}
+        data={imageData}
+        onDataUpload={setImageData}
+      />
     </>
   );
 }
