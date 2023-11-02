@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Kisi Frontend Task - Simple Demo Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This frontend application is a very basic React app designed to demonstrate the usage of our backend API.
 
-## Available Scripts
+[🚀 Live Demo] (https://master--spontaneous-biscuit-5d8a1e.netlify.app/)
 
-In the project directory, you can run:
+## Setup and Running
 
-### `npm start`
+To get started with the application, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Clone Repository**: Run `git clone git@github.com:mikdadayan/Kisi-JS-FS-Imupload.git` to clone the repository.
+2. **Change Directory**: Run `cd ./frontend` to move in frontend.
+3. **Install Dependencies**: Run `npm install` to install all required dependencies.
+4. **Add environment**: In the frontend root directory add `.env` file and copy the content from the `.env.local`.
+5. **Environment Variables**: There's a `REACT_APP_KISI_BACKEND_API` in `.env` file, make sure it refers to where you have the backend running.
+6. **Start the Application**: Run `npm start` to start the development server.
+7. **Access the Application**: Open [http://localhost:3000](http://localhost:3000) to view the application in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Possible Improvements
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Styling**: The application uses very basic JSS styling without focusing on aesthetics.
+- **Error Handling**: The error handling is minimal, mainly focusing on demonstrating API interactions.
+- **Authentication**: The authentication process is simplified, relying on the `profile_id` provided in the headers.
