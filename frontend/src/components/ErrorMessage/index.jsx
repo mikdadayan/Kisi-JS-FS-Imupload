@@ -4,7 +4,7 @@ const ErrorMessage = ({ message }) => {
   return (
     <>
       <div className="error-message">
-        {message || "Something went wrong..."}
+        <p>{message || "Something went wrong..."}</p>
       </div>
     </>
   );

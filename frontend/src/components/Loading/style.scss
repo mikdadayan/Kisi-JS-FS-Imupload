@@ -1,12 +1,15 @@
 .loading-message {
-  width: 100%;
   margin-top: 10%;
-  margin-bottom: 5%;
   background: rgba(110, 110, 218, 0.8);
-  color: #fff;
-  padding: 20px 150px;
+  padding: 5px 150px;
   text-align: center;
-  font-size: 24px;
   border: 1px solid rgb(82, 20, 216);
+  margin-bottom: 5%;
   border-radius: 8px;
+
+  p {
+    width: 100%;
+    color: #fff;
+    font-size: 24px;
+  }
 }
